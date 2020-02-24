@@ -1,1 +1,233 @@
-../output/a-proof-for-arithmetic-mean-and-geometric-mean-formula.html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- ## for client-side less
+  <link rel="stylesheet/less" type="text/css" href="https://github.com/theme/css/style.less">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/1.7.3/less.min.js" type="text/javascript"></script>
+  -->
+  <link rel="icon" type="image/vnd.microsoft.icon" href="https://github.com/">
+  <link rel="stylesheet" type="text/css" href="https://github.com/theme/css/style.min.css">
+  <link rel="stylesheet" type="text/css" href="https://github.com/theme/css/pygments.css">
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto+Mono">
+  <link rel="stylesheet" type="text/css" href="https://github.com/theme/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="https://github.com/theme/css/hatena-bookmark-icon.css">
+
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Hissanova">
+  <meta name="description" content="Posts and writings by Hissanova">
+
+  <link href="https://github.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Paraiso-Nirvana Atom" />
+
+<meta name="keywords" content="math, AM-GM formula">
+
+  <title>
+    Paraiso-Nirvana
+&ndash; A Proof for Arithmetic Mean and Geometric Mean Formula  </title>
+
+</head>
+
+<body>
+  <main>
+    <header>
+      <div class="site-name">
+        <a href="https://github.com">Paraiso-Nirvana</a>
+      </div>
+      <p>
+        <a href="https://github.com/archives.html"><i class="fa fa-archive"></i> Archive</a>
+      </p>
+    </header>
+
+<article>
+  <div class="article__title">
+    <h1><a href="https://github.com/a-proof-for-arithmetic-mean-and-geometric-mean-formula.html">A Proof for Arithmetic Mean and Geometric Mean Formula</a></h1>
+  </div>
+  <div class="article__meta">
+    <p class="article__meta__post-date">Posted on: 月 10 2月 2020</p>
+ Tags:
+      <a href="https://github.com/tag/math.html">#math</a>,      <a href="https://github.com/tag/am-gm-formula.html">#AM-GM formula</a>    </p>
+  </div>
+  <div class="article__text">
+    <h1>Arithmetic Mean and Geometric Mean Formula</h1>
+<h2>The Statement</h2>
+<p>Here is the arithmetic and geometric formula</p>
+<div class="math">\begin{equation*}
+\label{ }
+\frac{a_1 + \cdots + a_n}{n} \ge \sqrt[n]{a_1\cdots a_n},
+\end{equation*}</div>
+<p>where <span class="math">\(\forall i \; a_i &gt; 0\)</span> .</p>
+<h2>Proof of the Statement</h2>
+<p>OK for <span class="math">\(n=1\)</span>. Equality holds. Suppose that the inequality holds for all natural numbers up to <span class="math">\(n\)</span>, then</p>
+<div class="math">\begin{eqnarray*}
+a_1 + \cdots + a_{n+1} &amp; = &amp; \frac{a_2 + a_3 \cdots + a_{n+1}}{n} + \frac{a_1 + a_3 + \cdots + a_{n+1}}{n} + \cdots  \nonumber \\
+                       &amp;  &amp;  + \frac{a_1 + a_2 + \overset{i}{\breve{\cdots} } + a_{n+1}}{n} + \cdots + \frac{a_1 + \cdots + a_{n}}{n}\nonumber\\
+                       &amp; = &amp;  \sqrt[n]{a_2\cdots a_{n+1}} + \cdots + \sqrt[n]{a_1\cdots a_n} \nonumber \\
+                       &amp; = &amp;  \sqrt[n+1]{a_1\cdots a_{n+1}} \left( \frac{\sqrt[n]{a_2\cdots a_{n+1}}}{\sqrt[n+1]{a_1\cdots a_{n+1}}} + \cdots + \frac{\sqrt[n]{a_1\cdots a_n}}{\sqrt[n+1]{a_1\cdots a_{n+1}}} \right) \nonumber \\
+                       &amp; = &amp;  \sqrt[n+1]{a_1\cdots a_{n+1}} \left( \sqrt[n+1]{\frac{\sqrt[n]{a_2\cdots a_{n+1}}}{a_1}} + \cdots + \sqrt[n+1]{\frac{\sqrt[n]{a_1\cdots a_{n}}}{a_{n+1}}}\right) \nonumber \\
+                       &amp; = &amp;  \sqrt[n+1]{a_1\cdots a_{n+1}} \left( \sqrt[n+1]{\frac{\alpha_1}{a_1}} + \cdots + \sqrt[n+1]{\frac{\alpha_{n+1}}{a_{n+1}}}\right) 
+\end{eqnarray*}</div>
+<p>where <span class="math">\(\alpha_i=\sqrt[n]{a_1\overset{i}{\breve{\cdots}} a_{n+1}}\)</span> (Here, <span class="math">\(\overset{i}{\breve{\cdots}}\)</span> means omitting the i-th term in the sum or the product). It is easy to see that</p>
+<div class="math">\begin{equation*}
+\label{ }
+\sqrt[n+1]{\frac{\alpha_1}{a_1}}  \cdots  \sqrt[n+1]{\frac{\alpha_{n+1}}{a_{n+1}}} = 1.
+\end{equation*}</div>
+<p>So, if we can show the following proposition, we are done.<br>
+<strong><em>Lemma</em></strong>:
+ If <span class="math">\(b_1, \cdots, b_{n+1} &gt;0\)</span> and <span class="math">\(b_1 \cdots b_{n+1} = 1\)</span>, then</p>
+<div class="math">\begin{equation}
+\label{AM_GM_normalised}
+b_1 + \cdots + b_{n+1} \ge n+1
+\end{equation}</div>
+<p>Now, by substituting <span class="math">\(b_i = \sqrt[n+1]{\frac{\alpha_i}{a_i}}\)</span>, it is straightforward to see that</p>
+<div class="math">\begin{eqnarray*}
+a_1 + \cdots + a_{n+1} &amp; = &amp;  \sqrt[n+1]{a_1\cdots a_{n+1}} \left( \sqrt[n+1]{\frac{\alpha_1}{a_1}} + \cdots + \sqrt[n+1]{\frac{\alpha_{n+1}}{a_{n+1}}}\right) \nonumber \\
+                       &amp; \ge &amp;  \sqrt[n+1]{a_1\cdots a_{n+1}} (n + 1 ) \nonumber \\
+\end{eqnarray*}</div>
+<h2>Proof of the Lemma</h2>
+<p><strong><em>Lemma</em></strong>:
+ If <span class="math">\(b_1, \cdots, b_{n+1} &gt;0\)</span> and <span class="math">\(b_1 \cdots b_{n+1} = 1\)</span>, then</p>
+<div class="math">\begin{equation}
+\label{AM_GM_normalised}
+b_1 + \cdots + b_{n+1} \ge n+1
+\end{equation}</div>
+<p><strong><em>Proof</em></strong>:
+ First, if <span class="math">\(b_1 = \cdots = b_{n+1} =1\)</span>, then the equality holds.
+We notice that <span class="math">\(\exists i\)</span> such that <span class="math">\(b_{i} &gt; 1\)</span> implies that <span class="math">\(\exists j\)</span> such that <span class="math">\(b_{j} &lt; 1\)</span>.
+So, let us assume the condition and proceed to prove the statement by induction. 
+For <span class="math">\(n=1\)</span>, we can assume that <span class="math">\(b_1 = 1-c_1\)</span> with <span class="math">\(0 &lt; c_1 &lt;1\)</span>. Then</p>
+<div class="math">\begin{equation*}
+\label{ }
+b_1 + b_2 = b_1 + \frac{1}{b_1} = 1 - c_1 + \frac{1}{1-c_1} \ge 1-c_1 + 1 + c_1 = 2.
+\end{equation*}</div>
+<p>Now, let us suppose that (\ref{AM_GM_normalised}) holds true for all the natural numbers up to n. Regarding the fact mentioned above, let us suppose that <span class="math">\(b_n = 1 + c_n\)</span> and <span class="math">\(b_{n+1} = 1+c_{n+1}\)</span> with <span class="math">\(c_n &lt; 0\)</span> and <span class="math">\(c_{n+1} &gt; 0\)</span>. Then, by the assumption, </p>
+<div class="math">\begin{equation*}
+\label{ }
+(b_1 \cdots b_{n-1})(b_n b_{n+1}) = 1 \quad \text{implies} \quad b_1 + \cdots + b_{n-1} + b_n b_{n+1} \ge n.
+\end{equation*}</div>
+<p>If we can say</p>
+<div class="math">\begin{equation*}
+\label{ }
+b_1 + \cdots + b_{n-1} + (b_n + b_{n+1}) \ge \text{or} &gt; b_1 + \cdots b_{n-1} + (b_n b_{n+1} + 1),
+\end{equation*}</div>
+<p>then the inequality follows. But</p>
+<div class="math">\begin{equation*}
+\label{ }
+b_n + b_{n+1} - (b_n b_{n+1} + 1) = -c_n c_{n+1} &gt; 0.
+\end{equation*}</div>
+<p>Hence, it follows that </p>
+<div class="math">\begin{equation*}
+\label{ }
+b_1 + \cdots + b_{n-1} + b_n + b_{n+1} &gt; b_1 + \cdots + b_{n-1} + b_n b_{n+1} + 1 \ge n + 1
+\end{equation*}</div>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'http://orgmode.org/mathjax/MathJax.js';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
+  </div>
+<section class="social-tools">
+
+
+
+</section>
+</article>
+
+
+  </main>
+    <footer>
+      <div class="author__logo">
+          <img src="https://github.com/theme/images/logo.png" alt="logo">
+      </div>
+      <section class="author">
+        <div class="author__name">
+          <a href="https://github.com/pages/about.html">Hissanova</a>
+          <p></p>
+        </div>
+        <div class="author__link">
+          <ul>
+            <li><a href="http://getpelican.com/" title="Pelican"><i class="fa fa-link"></i></a></li>
+            <li><a href="http://python.org/" title="Python.org"><i class="fa fa-link"></i></a></li>
+            <li><a href="http://jinja.pocoo.org/" title="Jinja2"><i class="fa fa-link"></i></a></li>
+            <li><a href="#" title="Soundcloud"><i class="fa fa-link"></i></a></li>
+            <li>
+              <a href="#" target="_blank" title="soundcloud">
+              </a>
+            </li>
+            <li>
+              <a href="#" target="_blank" title="twitter">
+                <i class="fa fa-twitter-square"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/feeds/all.atom.xml" target="_blank" title="Feed">
+                <i class="fa fa-rss"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <div class="ending-message">
+        <p>&copy; Hissanova. Powered by <a href="http://getpelican.com" target="_blank">Pelican</a>, Theme is using <a href="https://github.com/laughk/pelican-hss" target="_blank">HSS</a>. </p>
+      </div>
+    </footer>
+</body>
+</html>

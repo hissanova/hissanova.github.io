@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Paraiso-Nirvana</title><link href="https://github.com/" rel="alternate"></link><link href="https://github.com/feeds/all.atom.xml" rel="self"></link><id>https://github.com/</id><updated>2020-02-10T00:00:00+09:00</updated><entry><title>A Proof for Arithmetic Mean and Geometric Mean Formula</title><link href="https://github.com/a-proof-for-arithmetic-mean-and-geometric-mean-formula.html" rel="alternate"></link><published>2020-02-10T00:00:00+09:00</published><updated>2020-02-10T00:00:00+09:00</updated><author><name>Hissanova</name></author><id>tag:github.com,2020-02-10:/a-proof-for-arithmetic-mean-and-geometric-mean-formula.html</id><summary type="html">&lt;h1&gt;Arithmetic Mean and Geometric Mean Formula&lt;/h1&gt;
+&lt;h2&gt;The Statement&lt;/h2&gt;
+&lt;p&gt;Here is the arithmetic and geometric formula&lt;/p&gt;
+&lt;div class="math"&gt;\begin{equation*}
+\label{ }
+\frac{a_1 + \cdots + a_n}{n} \ge \sqrt[n]{a_1\cdots a_n},
+\end{equation*}&lt;/div&gt;
+&lt;p&gt;where &lt;span class="math"&gt;\(\forall i \; a_i &amp;gt; 0\)&lt;/span&gt; .&lt;/p&gt;
+&lt;h2&gt;Proof of the Statement&lt;/h2&gt;
+&lt;p&gt;OK for &lt;span class="math"&gt;\(n=1\)&lt;/span&gt;. Equality holds. Suppose that the inequality …&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Arithmetic Mean and Geometric Mean Formula&lt;/h1&gt;
+&lt;h2&gt;The Statement&lt;/h2&gt;
+&lt;p&gt;Here is the arithmetic and geometric formula&lt;/p&gt;
+&lt;div class="math"&gt;\begin{equation*}
+\label{ }
+\frac{a_1 + \cdots + a_n}{n} \ge \sqrt[n]{a_1\cdots a_n},
+\end{equation*}&lt;/div&gt;
+&lt;p&gt;where &lt;span class="math"&gt;\(\forall i \; a_i &amp;gt; 0\)&lt;/span&gt; .&lt;/p&gt;
+&lt;h2&gt;Proof of the Statement&lt;/h2&gt;
+&lt;p&gt;OK for &lt;span class="math"&gt;\(n=1\)&lt;/span&gt;. Equality holds. Suppose that the inequality holds for all natural numbers up to &lt;span class="math"&gt;\(n\)&lt;/span&gt;, then&lt;/p&gt;
+&lt;div class="math"&gt;\begin{eqnarray*}
+a_1 + \cdots + a_{n+1} &amp;amp; = &amp;amp; \frac{a_2 + a_3 \cdots + a_{n+1}}{n} + \frac{a_1 + a_3 + \cdots + a_{n+1}}{n} + \cdots  \nonumber \\
+                       &amp;amp;  &amp;amp;  + \frac{a_1 + a_2 + \overset{i}{\breve{\cdots} } + a_{n+1}}{n} + \cdots + \frac{a_1 + \cdots + a_{n}}{n}\nonumber\\
+                       &amp;amp; = &amp;amp;  \sqrt[n]{a_2\cdots a_{n+1}} + \cdots + \sqrt[n]{a_1\cdots a_n} \nonumber \\
+                       &amp;amp; = &amp;amp;  \sqrt[n+1]{a_1\cdots a_{n+1}} \left( \frac{\sqrt[n]{a_2\cdots a_{n+1}}}{\sqrt[n+1]{a_1\cdots a_{n+1}}} + \cdots + \frac{\sqrt[n]{a_1\cdots a_n}}{\sqrt[n+1]{a_1\cdots a_{n+1}}} \right) \nonumber \\
+                       &amp;amp; = &amp;amp;  \sqrt[n+1]{a_1\cdots a_{n+1}} \left( \sqrt[n+1]{\frac{\sqrt[n]{a_2\cdots a_{n+1}}}{a_1}} + \cdots + \sqrt[n+1]{\frac{\sqrt[n]{a_1\cdots a_{n}}}{a_{n+1}}}\right) \nonumber \\
+                       &amp;amp; = &amp;amp;  \sqrt[n+1]{a_1\cdots a_{n+1}} \left( \sqrt[n+1]{\frac{\alpha_1}{a_1}} + \cdots + \sqrt[n+1]{\frac{\alpha_{n+1}}{a_{n+1}}}\right) 
+\end{eqnarray*}&lt;/div&gt;
+&lt;p&gt;where &lt;span class="math"&gt;\(\alpha_i=\sqrt[n]{a_1\overset{i}{\breve{\cdots}} a_{n+1}}\)&lt;/span&gt; (Here, &lt;span class="math"&gt;\(\overset{i}{\breve{\cdots}}\)&lt;/span&gt; means omitting the i-th term in the sum or the product). It is easy to see that&lt;/p&gt;
+&lt;div class="math"&gt;\begin{equation*}
+\label{ }
+\sqrt[n+1]{\frac{\alpha_1}{a_1}}  \cdots  \sqrt[n+1]{\frac{\alpha_{n+1}}{a_{n+1}}} = 1.
+\end{equation*}&lt;/div&gt;
+&lt;p&gt;So, if we can show the following proposition, we are done.&lt;br&gt;
+&lt;strong&gt;&lt;em&gt;Lemma&lt;/em&gt;&lt;/strong&gt;:
+ If &lt;span class="math"&gt;\(b_1, \cdots, b_{n+1} &amp;gt;0\)&lt;/span&gt; and &lt;span class="math"&gt;\(b_1 \cdots b_{n+1} = 1\)&lt;/span&gt;, then&lt;/p&gt;
+&lt;div class="math"&gt;\begin{equation}
+\label{AM_GM_normalised}
+b_1 + \cdots + b_{n+1} \ge n+1
+\end{equation}&lt;/div&gt;
+&lt;p&gt;Now, by substituting &lt;span class="math"&gt;\(b_i = \sqrt[n+1]{\frac{\alpha_i}{a_i}}\)&lt;/span&gt;, it is straightforward to see that&lt;/p&gt;
+&lt;div class="math"&gt;\begin{eqnarray*}
+a_1 + \cdots + a_{n+1} &amp;amp; = &amp;amp;  \sqrt[n+1]{a_1\cdots a_{n+1}} \left( \sqrt[n+1]{\frac{\alpha_1}{a_1}} + \cdots + \sqrt[n+1]{\frac{\alpha_{n+1}}{a_{n+1}}}\right) \nonumber \\
+                       &amp;amp; \ge &amp;amp;  \sqrt[n+1]{a_1\cdots a_{n+1}} (n + 1 ) \nonumber \\
+\end{eqnarray*}&lt;/div&gt;
+&lt;h2&gt;Proof of the Lemma&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Lemma&lt;/em&gt;&lt;/strong&gt;:
+ If &lt;span class="math"&gt;\(b_1, \cdots, b_{n+1} &amp;gt;0\)&lt;/span&gt; and &lt;span class="math"&gt;\(b_1 \cdots b_{n+1} = 1\)&lt;/span&gt;, then&lt;/p&gt;
+&lt;div class="math"&gt;\begin{equation}
+\label{AM_GM_normalised}
+b_1 + \cdots + b_{n+1} \ge n+1
+\end{equation}&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Proof&lt;/em&gt;&lt;/strong&gt;:
+ First, if &lt;span class="math"&gt;\(b_1 = \cdots = b_{n+1} =1\)&lt;/span&gt;, then the equality holds.
+We notice that &lt;span class="math"&gt;\(\exists i\)&lt;/span&gt; such that &lt;span class="math"&gt;\(b_{i} &amp;gt; 1\)&lt;/span&gt; implies that &lt;span class="math"&gt;\(\exists j\)&lt;/span&gt; such that &lt;span class="math"&gt;\(b_{j} &amp;lt; 1\)&lt;/span&gt;.
+So, let us assume the condition and proceed to prove the statement by induction. 
+For &lt;span class="math"&gt;\(n=1\)&lt;/span&gt;, we can assume that &lt;span class="math"&gt;\(b_1 = 1-c_1\)&lt;/span&gt; with &lt;span class="math"&gt;\(0 &amp;lt; c_1 &amp;lt;1\)&lt;/span&gt;. Then&lt;/p&gt;
+&lt;div class="math"&gt;\begin{equation*}
+\label{ }
+b_1 + b_2 = b_1 + \frac{1}{b_1} = 1 - c_1 + \frac{1}{1-c_1} \ge 1-c_1 + 1 + c_1 = 2.
+\end{equation*}&lt;/div&gt;
+&lt;p&gt;Now, let us suppose that (\ref{AM_GM_normalised}) holds true for all the natural numbers up to n. Regarding the fact mentioned above, let us suppose that &lt;span class="math"&gt;\(b_n = 1 + c_n\)&lt;/span&gt; and &lt;span class="math"&gt;\(b_{n+1} = 1+c_{n+1}\)&lt;/span&gt; with &lt;span class="math"&gt;\(c_n &amp;lt; 0\)&lt;/span&gt; and &lt;span class="math"&gt;\(c_{n+1} &amp;gt; 0\)&lt;/span&gt;. Then, by the assumption, &lt;/p&gt;
+&lt;div class="math"&gt;\begin{equation*}
+\label{ }
+(b_1 \cdots b_{n-1})(b_n b_{n+1}) = 1 \quad \text{implies} \quad b_1 + \cdots + b_{n-1} + b_n b_{n+1} \ge n.
+\end{equation*}&lt;/div&gt;
+&lt;p&gt;If we can say&lt;/p&gt;
+&lt;div class="math"&gt;\begin{equation*}
+\label{ }
+b_1 + \cdots + b_{n-1} + (b_n + b_{n+1}) \ge \text{or} &amp;gt; b_1 + \cdots b_{n-1} + (b_n b_{n+1} + 1),
+\end{equation*}&lt;/div&gt;
+&lt;p&gt;then the inequality follows. But&lt;/p&gt;
+&lt;div class="math"&gt;\begin{equation*}
+\label{ }
+b_n + b_{n+1} - (b_n b_{n+1} + 1) = -c_n c_{n+1} &amp;gt; 0.
+\end{equation*}&lt;/div&gt;
+&lt;p&gt;Hence, it follows that &lt;/p&gt;
+&lt;div class="math"&gt;\begin{equation*}
+\label{ }
+b_1 + \cdots + b_{n-1} + b_n + b_{n+1} &amp;gt; b_1 + \cdots + b_{n-1} + b_n b_{n+1} + 1 \ge n + 1
+\end{equation*}&lt;/div&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'http://orgmode.org/mathjax/MathJax.js';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</content><category term="math"></category><category term="math"></category><category term="AM-GM formula"></category></entry></feed>
