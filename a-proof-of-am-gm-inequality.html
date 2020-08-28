@@ -7,10 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="author" content="Hissanova" />
         <meta name="keywords" content="math" />
-        <meta name="description" content="Arithmetic Mean and Geometric Mean Formula The Statement Here is the arithmetic and geometric formula \begin{equation*} \label{ } \frac{a_1 + \cdots + a_n}{n} \ge \sqrt[n]{a_1\cdots a_n}, \end{equation*} where for all \(i\), \(a_i &gt; 0\) . Proof of the Statement OK for \(n=1\). Equality holds. Suppose that the …" />
+        <meta name="description" content="Inequality of Arithmetic and Geometric Mean Introduction This is a proof of the famous AM-GM inequality that the author came up with some time ago. I saw somebody used the theorem in a solution to a math olympiad problem, which I don&#39;t remember the details of. Although I must have …" />
 
 
-    <title>A Proof for Arithmetic Mean and Geometric Mean Formula - Paraiso-Nirvana</title>
+    <title>A Proof of AM-GM Inequality - Paraiso-Nirvana</title>
 
         <link rel="stylesheet" href="/theme/css/bootstrap.min.css" type="text/css" />
 
@@ -149,10 +149,10 @@
             <div class="col-lg-9">
                 <header class="page-header">
                     <h1>
-                        <a href="/a-proof-for-arithmetic-mean-and-geometric-mean-formula.html"
+                        <a href="/a-proof-of-am-gm-inequality.html"
                            rel="bookmark"
-                           title="Permalink to A Proof for Arithmetic Mean and Geometric Mean Formula">
-                            A Proof for Arithmetic Mean and Geometric Mean Formula
+                           title="Permalink to A Proof of AM-GM Inequality">
+                            A Proof of AM-GM Inequality
                         </a>
                         <small>
 <div class="post-info">
@@ -177,14 +177,27 @@
         <div class="row">
             <div class="col-lg-9">
                 <div class="entry-content">
-                    <h1>Arithmetic Mean and Geometric Mean Formula</h1>
+                    <h1>Inequality of Arithmetic and Geometric Mean</h1>
+<h2>Introduction</h2>
+<p>This is a proof of the famous AM-GM inequality that the author came up with some time ago.
+I saw somebody used the theorem in a solution to a math olympiad problem, which I don't remember the details of.
+Although I must have seen it somewhere during my undergrad-math education, I couldn't immediately think of any good proof of it.
+So, I started proving it by myself.
+I knew I had to make use of induction, and was vaguely hoping to make the argument as "symmetric" as possible.
+Here, I mean symmetric by treating all the terms in the arithmetic sum in the same manner.
+I think I have done my best to make it so.
+And the surprise was the method of my proof is actually quite similar to the one on <a href="https://en.wikipedia.org/wiki/Inequality_of_arithmetic_and_geometric_means#Proof_by_induction_#2">Wikipedia</a>.
+The difference is the progression of the argument is in the opposite direction.
+They start with the <em>Lemma1</em>, which is stated below, whereas I started directly from the arithmetic mean to reach at <em>Lemma1</em>.
+Well, anyway, it turns out that my proof wasn't that original as I expected at the first place&#x2026;
+Never mind. Cheer up (for myself) and let's keep up the good mathematical energy and motivation. :)</p>
 <h2>The Statement</h2>
 <p>Here is the arithmetic and geometric formula</p>
 <div class="math">\begin{equation*}
 \label{ }
 \frac{a_1 + \cdots + a_n}{n} \ge \sqrt[n]{a_1\cdots a_n},
 \end{equation*}</div>
-<p>where for all <span class="math">\(i\)</span>, <span class="math">\(a_i &gt; 0\)</span> .</p>
+<p>where <span class="math">\(\forall i \; a_i &gt; 0\)</span>.</p>
 <h2>Proof of the Statement</h2>
 <p>OK for <span class="math">\(n=1\)</span>. Equality holds. Suppose that the inequality holds for all natural numbers up to <span class="math">\(n\)</span>, then</p>
 <div class="math">\begin{eqnarray*}
@@ -201,24 +214,32 @@ a_1 + \cdots + a_{n+1} &amp; = &amp; \frac{a_2 + a_3 \cdots + a_{n+1}}{n} + \fra
 \sqrt[n+1]{\frac{\alpha_1}{a_1}}  \cdots  \sqrt[n+1]{\frac{\alpha_{n+1}}{a_{n+1}}} = 1.
 \end{equation*}</div>
 <p>So, if we can show the following proposition, we are done.<br>
-<strong><em>Lemma</em></strong>:
- If <span class="math">\(b_1, \cdots, b_{n+1} &gt;0\)</span> and <span class="math">\(b_1 \cdots b_{n+1} = 1\)</span>, then</p>
+<strong><em>Lemma1</em></strong>:</p>
+<blockquote>
+<p>If <span class="math">\(b_1, \cdots, b_{n+1} &gt;0\)</span> and <span class="math">\(b_1 \cdots b_{n+1} = 1\)</span>, then</p>
+<p>
 <div class="math">\begin{equation}
 \label{AM_GM_normalised}
 b_1 + \cdots + b_{n+1} \ge n+1
 \end{equation}</div>
+</p>
+</blockquote>
 <p>Now, by substituting <span class="math">\(b_i = \sqrt[n+1]{\frac{\alpha_i}{a_i}}\)</span>, it is straightforward to see that</p>
 <div class="math">\begin{eqnarray*}
 a_1 + \cdots + a_{n+1} &amp; = &amp;  \sqrt[n+1]{a_1\cdots a_{n+1}} \left( \sqrt[n+1]{\frac{\alpha_1}{a_1}} + \cdots + \sqrt[n+1]{\frac{\alpha_{n+1}}{a_{n+1}}}\right) \nonumber \\
                        &amp; \ge &amp;  \sqrt[n+1]{a_1\cdots a_{n+1}} (n + 1 ) \nonumber \\
 \end{eqnarray*}</div>
-<h2>Proof of the Lemma</h2>
-<p><strong><em>Lemma</em></strong>:
- If <span class="math">\(b_1, \cdots, b_{n+1} &gt;0\)</span> and <span class="math">\(b_1 \cdots b_{n+1} = 1\)</span>, then</p>
+<h2>Proof of the Lemma1</h2>
+<p><strong><em>Lemma1</em></strong>:</p>
+<blockquote>
+<p>If <span class="math">\(b_1, \cdots, b_{n+1} &gt;0\)</span> and <span class="math">\(b_1 \cdots b_{n+1} = 1\)</span>, then</p>
+<p>
 <div class="math">\begin{equation}
 \label{AM_GM_normalised}
 b_1 + \cdots + b_{n+1} \ge n+1
 \end{equation}</div>
+</p>
+</blockquote>
 <p><strong><em>Proof</em></strong>:
  First, if <span class="math">\(b_1 = \cdots = b_{n+1} =1\)</span>, then the equality holds.
 We notice that <span class="math">\(\exists i\)</span> such that <span class="math">\(b_{i} &gt; 1\)</span> implies that <span class="math">\(\exists j\)</span> such that <span class="math">\(b_{j} &lt; 1\)</span>.
