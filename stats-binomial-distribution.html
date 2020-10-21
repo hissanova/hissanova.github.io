@@ -1,0 +1,337 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="author" content="Hissanova" />
+        <meta name="keywords" content="math,statistics" />
+        <meta name="description" content="Binomial Distribution This page is a brief summary of the binomial distribution. The mean and variance are derived without using the moment generating function. Definition Definition: Binomial distribution A random variable \(X\) is said to follow the binomial distribution with parameters \(p \in (0,1)\) and \(n \in \mathbb{N …" />
+
+
+    <title>Stats: Binomial Distribution - Paraiso-Nirvana</title>
+
+        <link rel="stylesheet" href="/theme/css/bootstrap.min.css" type="text/css" />
+
+    <link href="/theme/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="/theme/css/pygments/native.css" rel="stylesheet" />
+    
+    <link href="/theme/css/pelican-twitchy.min.css" rel="stylesheet" />
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <!-- Feeds -->
+</head>
+<body data-spy="scroll" data-target="#scrollspy">
+    <div id="wrapper">
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper-small" class="twitchy-background">
+            <ul id="accordion-small" class="sidebar-nav sidebar-nav-small">
+                <li>
+        <a href="" title="Paraiso-Nirvana" class="collapsed">
+            <span class="glyphicon glyphicon-home"></span>
+        </a>
+    </li>
+                <li class="nav-divider"></li>
+                <li>
+        <a href="/archives.html" title="Recent Articles" class="collapsed">
+            <span class="glyphicon glyphicon-th-list"></span>
+        </a>
+    </li>
+                
+                <li class="nav-divider"></li>
+                <li>
+                    <a data-toggle="collapse" data-parent="#accordion-small" href="#collapse-social-small" title="Social" class="collapsed">
+                        <i class="fa fa-users padding-small"></i>
+                    </a>
+                </li>
+                <li class="panel anti-panel"><ul id="collapse-social-small" class="collapse ">
+                    <li>
+                        <a href="https://soundcloud.com/hissanova" title="soundcloud"><i class="fa fa-soundcloud-square fa-lg padding-small"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/Coulomb8" title="twitter"><i class="fa fa-twitter-square fa-lg padding-small"></i></a>
+                    </li>
+                </ul></li>
+                <li class="nav-divider"></li>
+                <li>
+        <a href="#" title="Back to top" class="collapsed">
+            <span class="fa fa-arrow-up"></span>
+        </a>
+    </li>
+            </ul>
+        </div>
+        <div id="sidebar-wrapper" class="twitchy-background">
+            <ul id="accordion" class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="/">
+                            <span class="glyphicon glyphicon-home padding-small"></span>
+                            Paraiso-Nirvana
+                    </a>
+                </li>
+                    <li>
+                        <a href="/archives.html">
+                            <span class="glyphicon glyphicon-th-list padding-small"></span>
+                            Recent Articles
+                        </a>
+                    </li>
+                <li class="nav-divider"></li>
+                <li>
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse-social">
+                        <i class="fa fa-users padding-small"></i>
+                        Contact
+                    </a>
+                </li>
+                <li class="panel anti-panel"><ul id="collapse-social" class="sidebar_submenu collapse ">
+                    <li>
+                        <a href="https://soundcloud.com/hissanova" title="soundcloud">
+                            <i class="fa fa-soundcloud-square fa-lg padding-small"></i>
+                            soundcloud
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/Coulomb8" title="twitter">
+                            <i class="fa fa-twitter-square fa-lg padding-small"></i>
+                            twitter
+                        </a>
+                    </li>
+                </ul></li>
+                
+                <li class="nav-divider"></li>
+                <li>
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse-pages">
+                        <i class="fa fa-folder-open padding-small"></i>
+                        Pages
+                    </a>
+                </li>
+                <li class="panel anti-panel"><ul id="collapse-pages" class="sidebar_submenu collapse ">
+                </ul></li>
+                
+                <li class="nav-divider"></li>
+                <li>
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse-categories">
+                        <i class="fa fa-folder-open padding-small"></i>
+                        Categories
+                    </a>
+                </li>
+                <li class="panel anti-panel"><ul id="collapse-categories" class="sidebar_submenu collapse ">
+                    <li class="active">
+                        <a href="/category/math.html">
+                            <i class="fa fa-folder-open padding-small"></i>
+                            math
+                            <span class="badge pull-right categorybadge">2</span>
+                        </a>
+                    </li>
+                </ul></li>
+                
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+        <!-- open/close sidebar -->
+        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">
+            <span id="right-arrow" class="glyphicon glyphicon-chevron-right"  title="expand sidebar"></span>
+            <span id="left-arrow" class="glyphicon glyphicon-chevron-left" title="minimize sidebar"></span>
+        </a>
+       <!-- /open/close sidebar -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+<section id="content">
+    <article>
+        <div class="row">
+            <div class="col-lg-9">
+                <header class="page-header">
+                    <h1>
+                        <a href="/stats-binomial-distribution.html"
+                           rel="bookmark"
+                           title="Permalink to Stats: Binomial Distribution">
+                            Stats: Binomial Distribution
+                        </a>
+                        <small>
+<div class="post-info">
+    <div class="publish-info-block">
+        <small>
+            <span class="published">
+                <i class="fa fa-calendar padding-small"></i><time datetime="2020-10-21T00:00:00+09:00"> 水 21 10月 2020</time>
+            </span>
+            <span class="category">
+                <i class="fa fa-folder-open padding-small"></i><a href="/category/math.html">math</a>
+            </span>
+            <span class="tags">
+                <i class="fa fa-tags padding-small"></i>
+                <a href="/tag/math.html">math</a> /                 <a href="/tag/statistics.html">statistics</a>            </span>
+        </small>
+    </div>
+</div><!-- /.post-info -->                        </small>
+                    </h1>
+                </header>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-9">
+                <div class="entry-content">
+                    <h1>Binomial Distribution</h1>
+<p>This page is a brief summary of the binomial distribution. The mean and variance are derived without using the moment generating function.</p>
+<h2>Definition</h2>
+<blockquote>
+<p><strong>Definition: Binomial distribution</strong><br>
+A random variable <span class="math">\(X\)</span> is said to follow the binomial distribution with parameters <span class="math">\(p \in (0,1)\)</span> and <span class="math">\(n \in \mathbb{N}\)</span>, denoted <span class="math">\(X \sim Binom(n,p)\)</span>, if</p>
+<ol>
+<li>the sample space is given by: <span class="math">\(\mathcal{X} = \{0, \ldots ,n\}\)</span>, and</li>
+<li>the probability mass function is given by: <span class="math">\(\displaystyle f(x;n,p) = \left( n \atop p\right) p^{x}(1-p)^{n-x}\)</span>.</li>
+</ol>
+</blockquote>
+<h2>Properties</h2>
+<ul>
+<li>The mean:  <span class="math">\(\mathbb{E}[X] = np\)</span></li>
+<li>The variance:  <span class="math">\(\text{Var}[X] = np(1-p)\)</span></li>
+<li>The moment generating function:  <span class="math">\(M(t) = (1- p + pe^{t})^{n}\)</span></li>
+</ul>
+<h2>Derivations of Properties</h2>
+<h3>The mean</h3>
+<div class="math">\begin{eqnarray}
+\mathbb{E}[X]  &amp; = &amp; \sum_{x=0}^{n} x \left( n \atop x \right)p^{x}(1-p)^{n-x}\\
+               &amp; = &amp; \sum_{x=1}^{n} x \left( n \atop x \right) p^{x}(1-p)^{n-x}\\
+               &amp; = &amp; p \sum_{x=1}^{n} x \left( n \atop x \right) p^{x-1}(1-p)^{n-x}
+\end{eqnarray}</div>
+<p>Consider the following polynomial's derivative with respect to <span class="math">\(P\)</span></p>
+<div class="math">\begin{eqnarray}
+(P + Q)^{n} &amp; = &amp; \sum_{x=0}^{n} \left( n \atop x \right)P^{x}Q^{n-x}\\
+\frac{\partial}{\partial P}(P + Q)^{n} &amp; = &amp; n(P + Q)^{n-1} = \sum_{x=0}^{n} x \left( n \atop x \right)P^{x-1}Q^{n-x} \\
+                                       &amp; = &amp; \frac{1}{P} \left( \sum_{x=0}^{n} x \left( n \atop x \right)P^{x}Q^{n-x}\right)\\
+ nP(P + Q)^{n-1} &amp; = &amp;  \sum_{x=0}^{n} x \left( n \atop x \right)P^{x}Q^{n-x}
+\end{eqnarray}</div>
+<p>Putting <span class="math">\(P=p\)</span> and <span class="math">\(Q=1-p\)</span>, we have</p>
+<div class="math">\begin{equation}
+\mathbb{E}[X] = pn(p+1-p)^{n-1} = pn
+\end{equation}</div>
+<h3>The variance</h3>
+<div class="math">\begin{eqnarray}
+\text{Var}[X] &amp; = &amp; \mathbb{E}[X^{2}] - \mathbb{E}[X]^{2}\\
+       &amp; = &amp; \sum_{x=0}^{n} x^{2} \left( n \atop x \right)p^{x}(1-p)^{n-x} - n^{2}p^{2}
+\end{eqnarray}</div>
+<p>To calculate the first term in the last line, let us consider the following second derivative of the polynomial <span class="math">\((P+Q)^{n}\)</span></p>
+<div class="math">\begin{eqnarray}
+\frac{\partial^{2}}{\partial P^{2}}(P + Q)^{n} &amp; = &amp; n(n-1)(P + Q)^{n-2} \nonumber\\ 
+                                               &amp; = &amp; \sum_{x=2}^{n} x(x-1) \left( n \atop x \right)P^{x-2}Q^{n-x} \nonumber\\
+                                               &amp; = &amp; \sum_{x=2}^{n} x^{2} \left( n \atop x \right)P^{x-2}Q^{n-x} - \sum_{x=2}^{n} x \left( n \atop x \right)P^{x-2}Q^{n-x} \nonumber\\
+                                               &amp; = &amp; \frac{1}{P^{2}} \left( \sum_{x=2}^{n} x^{2} \left( n \atop x \right)P^{x}Q^{n-x} - \sum_{x=2}^{n} x \left( n \atop x \right)P^{x}Q^{n-x} \right) \nonumber\\
+                                               &amp; = &amp; \frac{1}{P^{2}} \left( \sum_{x=1}^{n} x^{2} \left( n \atop x \right)P^{x}Q^{n-x} - \sum_{x=1}^{n} x \left( n \atop x \right)P^{x}Q^{n-x} \right) \nonumber\\
+                                               &amp; = &amp; \frac{1}{P^{2}} \left( \sum_{x=1}^{n} x^{2} \left( n \atop x \right)P^{x}Q^{n-x} - nP(P+Q)^{n-1} \right) \nonumber\\
+ \sum_{x=1}^{n} x^{2} \left( n \atop x \right)P^{x}Q^{n-x} &amp; = &amp; n(n-1)P^{2}(P + Q)^{n-2} + nP(P+Q)^{n-1} \nonumber
+\end{eqnarray}</div>
+<p>Putting <span class="math">\(P=p\)</span> and <span class="math">\(Q=1-p\)</span>, we have</p>
+<div class="math">\begin{equation}
+\sum_{x=0}^{n} x^{2} \left( n \atop x \right)p^{x}(1-p)^{n-x}  =  n(n-1)p^{2} + np
+\end{equation}</div>
+<p>Hence</p>
+<div class="math">\begin{equation}
+\text{Var}[X] = n(n-1)p^{2} + np - n^{2}p^{2} = np(1-p)
+\end{equation}</div>
+<h3>The moment generating function</h3>
+<div class="math">\begin{eqnarray}
+M(t) = \mathbb{E}[e^{tX}] &amp; = &amp; \sum_{x=0}^{n} e^{tx} \left( n \atop x \right)p^{x}(1-p)^{n-x} \\
+&amp; = &amp; \sum_{x=0}^{n}  \left( n \atop x \right) (pe^{t})^{x}(1-p)^{n-x} \\
+&amp; = &amp; (1-p +pe^{t})^{n}
+\end{eqnarray}</div>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://orgmode.org/mathjax/MathJax.js';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
+                </div>
+                <footer class="text-right">
+                    <p>- Hissanova</p>
+                </footer>
+            </div>
+        </div>
+    </article>
+</section>
+<footer>
+    <hr>
+    <div class="row">
+        <div class="col-lg-9 text-center">
+            <p><small>
+                Built by <a href="http://docs.getpelican.com/en/latest">Pelican</a> / <a href="https://github.com/ingwinlu/pelican-twitchy">pelican-twitchy</a>
+                &middot;                    &copy; 2020 Hissanova
+            </small></p>
+        </div>
+    </div>
+</footer>            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+    <!-- jQuery Version 1.11.2 -->
+    <script src="/theme/js/jquery-1.11.2.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/theme/js/bootstrap.min.js"></script>
+    <!-- twitchy Script -->
+    <script src="/theme/js/pelican_twitchy.min.js"></script>
+
+</body>
+</html>
