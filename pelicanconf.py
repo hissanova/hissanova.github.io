@@ -2,7 +2,8 @@ AUTHOR = 'hissanova'
 SITENAME = "Hissanova's Blog"
 # SITEURL = "http://hissanova.gihub.io"
 SITETITLE = "Hissanova's Blog"
-SITESUBTITLE = "沖縄んかい暮らちょーる<br>キジムナーやさ!!"
+SITESUBTITLE = """日頃考えている事を綴ります。<br />
+                オンライン沖縄語辞典の管理人です。"""
 
 PATH = 'content'
 
@@ -19,7 +20,7 @@ AUTHOR_FEED_RSS = None
 
 # Blogroll
 LINKS = (
-    ('沖縄語辞典アプリ', 'https://okinawago.app'),
+    ('オンライン沖縄語辞典', 'https://okinawago.app'),
 )
 
 # Social widget
